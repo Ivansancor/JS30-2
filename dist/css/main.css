@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .clock {
+  width: 20rem;
+  height: 20rem;
+  border: 0.5rem solid white;
+  border-radius: 50%;
+  position: relative;
+}
+
+body .clock::after {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.9rem);
+  right: calc(50% - 0.9rem);
+  border: 0.4rem solid white;
+}
+
+body .clock .hand {
+  height: 0.5rem;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+          transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+body #hours {
+  width: 5rem;
+  height: 0.5rem;
+}
+
+body #mins {
+  width: 7rem;
+  height: 0.3rem;
+}
+
+body #secs {
+  width: 8rem;
+  height: 0.2rem;
+}
+
+body .text-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body p {
+  margin-top: 5rem;
+  color: white;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+body p span {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  font-family: monospace;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=main.css.map */

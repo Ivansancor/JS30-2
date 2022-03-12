@@ -2,6 +2,7 @@ const hours = document.getElementById("hours");
 const mins = document.getElementById("mins");
 const secs = document.getElementById("secs");
 const display = document.getElementById("time-display");
+const hands = document.querySelectorAll(".hand");
 
 function uploadTime(){
     //for the text
@@ -12,7 +13,7 @@ function uploadTime(){
     if (currentMins < 10) {
         currentMins =`0${currentMins}`;
     }
-    if (currentSecs < 10) {
+    else if (currentSecs < 10) {
         currentSecs =`0${currentSecs}`;
     }
 
@@ -29,10 +30,13 @@ function uploadTime(){
     mins.style.transform = `rotate(${minsDegrees}deg)`;
     secs.style.transform = `rotate(${secsDegrees}deg)`;
 
+    if (new Date().getSeconds() === 0 || new Date().getMinutes() === 0 || new Date().getHours() === 0) {
+        hands.forEach(hand => hand.style.transitionDuration = "0s");
+    } else {
+        hands.forEach(hand => hand.style.transitionDuration = "0.4s");
+    }
 
-    // if (secsDegrees > 444) {
-    //     secs.removeAttribute(style);
-    // }
+    
 }
 
 uploadTime();
